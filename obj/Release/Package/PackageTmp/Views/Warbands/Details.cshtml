@@ -1,0 +1,58 @@
+﻿@model MordheimRoster.Models.Warband
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Warband</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.WardbandName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WardbandName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WarbandType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WarbandType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gold)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gold)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Wyrdstone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Wyrdstone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Raiting)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Raiting)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.WarbandId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

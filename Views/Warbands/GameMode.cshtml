@@ -1,0 +1,96 @@
+﻿@using System.Web.UI.WebControls
+@using MordheimRoster.Controllers
+@using MordheimRoster.Models
+@model MordheimRoster.Models.Warband
+
+@{
+    ViewBag.Title = "Roster";
+}
+
+<h2>Roster</h2>
+@*@using (Html.BeginForm("MultipleCommand", "Warbands", FormMethod.Post, new { id = Model.WarbandId }))*@
+    @*{*@
+        <div>
+            <h4>@Html.DisplayFor(model => model.Name) - @Html.DisplayFor(model => model.Type)</h4>
+   
+        
+    
+            <table class="table" >
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Gold)</th>
+                    <th>@Html.DisplayNameFor(model => model.Wyrdstone)</th>
+                   
+                </tr>
+                <tr>
+                    <td>@Html.DisplayFor(model => model.Gold)</td>
+                    <td>@Html.DisplayFor(model => model.Wyrdstone)</td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        Eq
+                        @Model.Name
+                    </td>
+                </tr>
+            </table>
+            <hr />
+            <h5>Heroes</h5>
+            @*<button type="submit" id="btnAddHero" name="Command" value="addHero">Add Hero</button>*@
+            @Html.ActionLink("Add hero", "GameMode", new { id = Model.WarbandId, command = "AddHero"})
+            @*<input type="button" onclick="@Html.Action("MultipleCommand", "Warbands", new { id = Model.WarbandId, command = "AddHero" })" />*@
+           
+            @if (Model.Heroes != null)
+            {
+                foreach (Hero h in Model.Heroes)
+                {
+                    <table class="table">
+                        <tr>
+                            <td colspan="9">Name:</td>
+                        </tr>
+                        <tr>
+                            <td colspan="9">Type</td>
+                        </tr>
+                        <tr>
+                            <td>@StatType.M.ToString()</td>
+                            <td>@StatType.WS.ToString()</td>
+                            <td>@StatType.BS.ToString()</td>
+                            <td>@StatType.S.ToString()</td>
+                            <td>@StatType.T.ToString()</td>
+                            <td>@StatType.W.ToString()</td>
+                            <td>@StatType.I.ToString()</td>
+                            <td>@StatType.A.ToString()</td>
+                            <td>@StatType.Ld.ToString()</td>
+                 
+                        </tr>
+                        <tr>
+                            <td>@h.M</td>
+                            <td>@h.WS</td>
+                            <td>@h.BS</td>
+                            <td>@h.S</td>
+                            <td>@h.T</td>
+                            <td>@h.W</td>
+                            <td>@h.I</td>
+                            <td>@h.A</td>
+                            <td>@h.Ld</td> 
+                        </tr>
+                        <tr style="height: 50px">
+                            <td colspan="5">Eq</td>
+                            <td colspan="4">Skills/injures</td>
+                        </tr>
+                        <tr>
+                            <td colspan="9">XP</td>
+                        </tr>
+                    </table>
+                }
+            }
+            <h5>Henchmen</h5>   
+            <h5>Hired Swords</h5>   
+
+            <dl class="dl-horizontal">
+        
+            </dl>
+        </div>
+    @*}*@
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.WarbandId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

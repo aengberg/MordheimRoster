@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="mordheim" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\dev\\azure\\MordheimRoster\\MordheimRoster\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\dev\\azure\\MordheimRoster\\MordheimRoster\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=(LocalDb)\v11.0;AttachDbFilename=|DataDirectory|\aspnet-MordheimRoster-20141219073430.mdf;Initial Catalog=aspnet-MordheimRoster-20141219073430;Integrated Security=True" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\dev\\azure\\MordheimRoster\\MordheimRoster\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+</parameters>

@@ -1,0 +1,41 @@
+﻿@using MordheimRoster.Models
+@model MordheimRoster.Models.Warband
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>@Html.DisplayFor(model => model.Name) - @Html.DisplayFor(model => model.Type)</h4>
+    <table>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.Gold)</td>
+            <td>@Html.DisplayNameFor(model => model.Wyrdstone)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayFor(model => model.Gold)</td>
+            <td>@Html.DisplayFor(model => model.Wyrdstone)</td>
+        </tr>
+        <tr><td>Heroes</td></tr>    
+            @foreach (Hero hero in Model.Heroes)
+            {
+                <tr>
+                    <td></td>
+                    <td>@hero.Name</td>
+                </tr>
+
+            }
+    </table>
+    <hr />
+    <dl class="dl-horizontal">
+        
+     
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.WarbandId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
